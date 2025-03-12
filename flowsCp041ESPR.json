@@ -1,0 +1,545 @@
+[
+    {
+        "id": "695b1292e14791ed",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "04875098168a4546",
+        "type": "serial-port",
+        "name": "",
+        "serialport": "COM5",
+        "serialbaud": "9600",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "7e3dcaef0a4f0677",
+        "type": "ui_tab",
+        "name": "Checkpoint 4  - 1ESPR",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "56fcd41e9f43d4cd",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#ff2e58",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#ff2e58",
+                    "edited": true
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#ff2e58",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#ff7a95",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#ff2e58",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "4bee722345ed1dbb",
+        "type": "ui_group",
+        "name": "Temperatura",
+        "tab": "7e3dcaef0a4f0677",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "871d61886f0f0ede",
+        "type": "ui_group",
+        "name": "Umidade",
+        "tab": "7e3dcaef0a4f0677",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "10fbe1ceba5e8c9e",
+        "type": "ui_group",
+        "name": "Luminosidade",
+        "tab": "7e3dcaef0a4f0677",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "24eca90ba7962ee4",
+        "type": "ui_group",
+        "name": "Controle Do Motor",
+        "tab": "7e3dcaef0a4f0677",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "2aa174860d8e4e1e",
+        "type": "serial in",
+        "z": "695b1292e14791ed",
+        "name": "",
+        "serial": "04875098168a4546",
+        "x": 250,
+        "y": 440,
+        "wires": [
+            [
+                "2ae8d9f9c28b5650"
+            ]
+        ]
+    },
+    {
+        "id": "54d5c4de00e3cb02",
+        "type": "ui_gauge",
+        "z": "695b1292e14791ed",
+        "name": "",
+        "group": "4bee722345ed1dbb",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "compass",
+        "title": "Temperatura",
+        "label": "°F",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "500",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 1010,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "2ae8d9f9c28b5650",
+        "type": "json",
+        "z": "695b1292e14791ed",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 390,
+        "y": 440,
+        "wires": [
+            [
+                "f2dbf49eaf50265a",
+                "5a28aee8bb31054c",
+                "ee8516218353ce2e",
+                "b48d7006c2f7b486",
+                "2b5b7fad6fa4ac17"
+            ]
+        ]
+    },
+    {
+        "id": "f2dbf49eaf50265a",
+        "type": "change",
+        "z": "695b1292e14791ed",
+        "name": "Temperatura",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.Temp",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 550,
+        "y": 440,
+        "wires": [
+            [
+                "54d5c4de00e3cb02"
+            ]
+        ]
+    },
+    {
+        "id": "5a28aee8bb31054c",
+        "type": "change",
+        "z": "695b1292e14791ed",
+        "name": "Umidade",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.Umi",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 540,
+        "y": 500,
+        "wires": [
+            [
+                "97e7d398d13ace21"
+            ]
+        ]
+    },
+    {
+        "id": "ee8516218353ce2e",
+        "type": "change",
+        "z": "695b1292e14791ed",
+        "name": "Luminosidade",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.Lux",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 560,
+        "y": 560,
+        "wires": [
+            [
+                "f2ee484e0f918dd5"
+            ]
+        ]
+    },
+    {
+        "id": "97e7d398d13ace21",
+        "type": "ui_gauge",
+        "z": "695b1292e14791ed",
+        "name": "",
+        "group": "871d61886f0f0ede",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "wave",
+        "title": "Umidade",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 1020,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "f2ee484e0f918dd5",
+        "type": "ui_gauge",
+        "z": "695b1292e14791ed",
+        "name": "",
+        "group": "10fbe1ceba5e8c9e",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "donut",
+        "title": "Luminosidade",
+        "label": "Lux",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "1000",
+        "colors": [
+            "#ffffff",
+            "#f25a69",
+            "#ff2e58"
+        ],
+        "seg1": "500",
+        "seg2": "700",
+        "diff": false,
+        "className": "",
+        "x": 1000,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "b0fa583612a7cece",
+        "type": "serial out",
+        "z": "695b1292e14791ed",
+        "name": "OUT",
+        "serial": "04875098168a4546",
+        "x": 810,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "39d93630ec897941",
+        "type": "ui_button",
+        "z": "695b1292e14791ed",
+        "name": "",
+        "group": "24eca90ba7962ee4",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "<",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "L",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 530,
+        "y": 700,
+        "wires": [
+            [
+                "b0fa583612a7cece"
+            ]
+        ]
+    },
+    {
+        "id": "ac24f8823c768a30",
+        "type": "ui_button",
+        "z": "695b1292e14791ed",
+        "name": "",
+        "group": "24eca90ba7962ee4",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "-",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "M",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 530,
+        "y": 760,
+        "wires": [
+            [
+                "b0fa583612a7cece"
+            ]
+        ]
+    },
+    {
+        "id": "f87b8f658dc28b68",
+        "type": "ui_button",
+        "z": "695b1292e14791ed",
+        "name": "",
+        "group": "24eca90ba7962ee4",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": ">",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "R",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 530,
+        "y": 820,
+        "wires": [
+            [
+                "b0fa583612a7cece"
+            ]
+        ]
+    },
+    {
+        "id": "b48d7006c2f7b486",
+        "type": "change",
+        "z": "695b1292e14791ed",
+        "name": "Servo",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.Servo",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 530,
+        "y": 620,
+        "wires": [
+            [
+                "afdef8c51256dbf5"
+            ]
+        ]
+    },
+    {
+        "id": "afdef8c51256dbf5",
+        "type": "ui_gauge",
+        "z": "695b1292e14791ed",
+        "name": "",
+        "group": "24eca90ba7962ee4",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "donut",
+        "title": "Servo",
+        "label": "°",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "360",
+        "colors": [
+            "#ff8597",
+            "#f25a69",
+            "#ff2e58"
+        ],
+        "seg1": "90",
+        "seg2": "180",
+        "diff": false,
+        "className": "",
+        "x": 970,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "2b5b7fad6fa4ac17",
+        "type": "debug",
+        "z": "695b1292e14791ed",
+        "name": "debug 1",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 540,
+        "y": 180,
+        "wires": []
+    }
+]
