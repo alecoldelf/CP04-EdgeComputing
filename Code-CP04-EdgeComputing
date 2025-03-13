@@ -1,0 +1,63 @@
+#include<DHT.h>
+#include<Servo.h>
+#include<ArduinoJson.h>
+ 
+#define DHTPIN 2
+#define DHTTYPE DHT11
+#define ServoPin 3
+ 
+const int LDR = A0;  
+const int luz = 13;
+ 
+int valorsensor ;  
+ 
+DHT dht(DHTPIN, DHTTYPE);
+Servo myServo;
+ 
+void setup() {
+  myServo.attach(ServoPin);
+  dht.begin();
+  pinMode(ServoPin, OUTPUT);
+  pinMode(luz, INPUT);
+  Serial.begin(9600);
+}
+ 
+void loop() {
+  moveServo();
+ 
+  StaticJsonDocument<100>json;
+ 
+  int temp = dht.readTemperature();
+  int umi = dht.readHumidity();
+  int lux = analogRead(LDR);
+ 
+  temp = (temp * 9/5) + 32;
+ 
+ 
+  json["Temp"] = temp;
+  json["Umi"] = umi;
+  json["Lux"] = lux;
+  json["Servo"] = myServo.read();
+ 
+  serializeJson(json, Serial);
+ 
+  Serial.println();
+ 
+  delay(3000);
+}
+ 
+ 
+void moveServo() {
+   if (Serial.available() > 0) {
+    char comando = Serial.read();
+    if (comando == 'L') {
+      myServo.write(180);
+    }
+    else if (comando == 'R') {
+      myServo.write(0);
+    }
+    else if (comando == 'M') {
+      myServo.write(90);
+    }
+  }
+}
